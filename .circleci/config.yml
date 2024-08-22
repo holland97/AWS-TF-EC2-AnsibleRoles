@@ -1,0 +1,40 @@
+version: 2.1
+
+orbs:
+  terraform: circleci/terraform@3.1
+
+jobs:
+  create_backend_resources:
+    executor:
+      name: terraform/default
+    steps:
+      - checkout
+      - terraform/init:
+          path: ./terraform/backend
+      - terraform/fmt:
+          path: ./terraform/backend
+      - terraform/apply:
+          path: ./terraform/backend
+
+  deploy_infrastructure:
+    executor:
+      name: terraform/default
+    steps:
+      - checkout
+      - terraform/init:
+          path: ./terraform/infrastructure
+      - terraform/plan:
+          path: ./terraform/infrastructure
+      - terraform/apply:
+          path: ./terraform/infrastructure
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - create_backend_resources:
+          context: test
+      - deploy_infrastructure:
+          context: test
+          requires:
+            - create_backend_resources
