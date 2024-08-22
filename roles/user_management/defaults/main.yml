@@ -1,0 +1,19 @@
+user_list:
+  - name: "bobby"
+    shell: "/bin/bash"
+    home: "/home/bobby"
+    groups:
+      - finance
+
+  - name: "richard"
+    shell: "/bin/bash"
+    home: "/home/richard"
+    groups:
+      - engineer
+
+  - name: "morpheus"
+    shell: "/bin/bash"  
+    home: "/home/morpheus"
+    groups:
+      - developer
+      - engineer

@@ -1,0 +1,10 @@
+- name: Debug group_list
+  debug:
+    var: group_list
+
+- name: Create groups
+  group:
+    name: "{{ item }}" # Group name
+    state: present
+  loop: "{{ group_list }}" 
+

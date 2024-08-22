@@ -1,0 +1,7 @@
+---
+- hosts: ubuntu
+  become: true
+  roles:
+    - software
+    - groups
+    - user_management

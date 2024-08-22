@@ -1,0 +1,6 @@
+package_lists:
+- nginx
+- net-tools
+- htop
+- rsync
+- ufw

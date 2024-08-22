@@ -1,0 +1,14 @@
+- name: Debugging user_management role
+  debug:
+    msg: "user_management role is being executed"
+
+
+- name: Create users if they don't exist
+  user:
+    name: "{{ item.name }}"
+    shell: "{{ item.shell }}"
+    home: "{{ item.home }}"
+    groups: "{{ item.groups }}"
+    state: present
+  loop: "{{ user_list }}"
+
