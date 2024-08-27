@@ -1,2 +1,2 @@
-# AnsibleEC2Roles
+# AWS-TF-EC2-AnsibleRoles
 Developed a comprehensive cloud infrastructure solution utilizing AWS services and automation tools. Set up a Virtual Private Cloud (VPC) with all necessary components, including an EC2 instance, S3 bucket, and DynamoDB. Configured the S3 bucket as a backend for state storage. Implemented continuous integration and deployment using CircleCI to automate code deployment. Generated an SSH keypair to enable Ansible for deploying custom roles to the EC2 instance. 
